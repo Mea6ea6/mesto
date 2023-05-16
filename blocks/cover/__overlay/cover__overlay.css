@@ -1,0 +1,21 @@
+.cover__overlay {
+    color: inherit;
+    text-decoration: none;
+    background: #292b2e4d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    transition: background 0.2s;
+}
+.cover__overlay:hover {
+    background: #2a2c2fcc;
+}
+.cover__overlay::after {
+    content: '';
+    width: 0;
+    height: 0;
+    margin-left: -1px;
+    padding-top: calc(740 / 1184 * 100%);
+}

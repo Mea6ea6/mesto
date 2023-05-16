@@ -1,0 +1,7 @@
+.place__image {
+    width: 100%;
+    height: min-content;
+    padding-bottom: 100%;
+    background-size: cover;
+    background-position: center;
+}
