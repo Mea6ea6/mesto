@@ -3,7 +3,7 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    background-image: url(../../images/cover/__background.jpg);
+    background-image: url(../../images/cover/__overlay.png);
     display: flex;
     background-repeat: no-repeat;
     background-position: center;
