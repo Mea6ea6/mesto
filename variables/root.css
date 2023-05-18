@@ -7,17 +7,17 @@
     --hover-link-transition: opacity 0.2s;
     --hover-link-opacity: 0.8;
 }
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1279px) {
     :root {
         --width: 100%;
     }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
     :root {
         --body-padding: 0 24px;
     }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     :root {
         --body-padding: 0 16px;
     }

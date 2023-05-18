@@ -3,3 +3,13 @@
     flex-direction: column;
     gap: 26px;
 }
+@media screen and (max-width: 1023px) {
+    .place__textarea {
+        gap: 25px;
+    }
+}
+@media screen and (max-width: 424px) {
+    .place__textarea {
+        padding: var(--body-padding);
+    }
+}

@@ -10,7 +10,7 @@
 .footer__link:hover {
     opacity: var(--hover-link-opacity);
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .footer__link {
         font-size: 24px;
         line-height: 24px;

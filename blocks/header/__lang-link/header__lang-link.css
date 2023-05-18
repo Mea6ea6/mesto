@@ -4,8 +4,12 @@
     font-size: 24px;
     font-weight: 400;
     line-height: 28px;
+    transition: var(--hover-link-transition);
 }
-@media screen and (max-width: 768px) {
+.header__lang-link:hover {
+    opacity: var(--hover-link-opacity);
+}
+@media screen and (max-width: 767px) {
     .header__lang-link {
         font-size: 18px;
         line-height: 20px;

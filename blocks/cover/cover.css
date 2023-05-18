@@ -10,12 +10,12 @@
     background-size: cover;
     margin: 0 0 92px;
 }
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1279px) {
     .cover {
         width: 100%;
     }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .cover {
         margin-bottom: 64px;
     }
