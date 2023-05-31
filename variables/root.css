@@ -1,0 +1,9 @@
+:root {
+    --black: #000;
+    --white: #FFF;
+    --gray: #545454;
+    --width: 100%;
+    --hover-transition: opacity 0.3s;
+    --hover-opacity: 0.7;
+    --padding: 0 19px;
+}

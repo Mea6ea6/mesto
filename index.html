@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/xicon/xicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="pages/index.css">
+    <title>Профиль</title>
+</head>
+<body class="background">
+
+    <div class="page">
+
+        <header class="header">
+            <img class="header__logo" src="images/header/__logo.svg" alt="Место">
+            <hr class="header__line">
+        </header>
+
+        <main class="content">
+
+            <section class="profile">
+                <img class="profile__avatar" src="images/profile/__avatar.png" alt="не синий, но тоже аватар">
+                <div class="profile__info">
+                    <h2 class="profile__name">Жак-Ив Кусто</h2>
+                    <p class="profile__description">Исследователь океана</p>
+                    <button class="profile__edit-button" aria-label="Редактировать"></button>
+                </div>
+                <button class="profile__add-button" aria-label="Новое место"></button>
+            </section>
+
+            <section class="elements">
+
+                <article class="element">
+                    <img class="element__image" src="images/element/__image-1.png" alt="картиночка">
+                    <h3 class="element__denomination">Карачаево-Черкессия</h3>
+                    <button class="element__like" aria-label="Лайк"></button>
+                </article>
+
+                <article class="element">
+                    <img class="element__image" src="images/element/__image-2.png" alt="картиночка">
+                    <h3 class="element__denomination">Тбилиси</h3>
+                    <button class="element__like" aria-label="Лайк"></button>
+                </article>
+
+                <article class="element">
+                    <img class="element__image" src="images/element/__image-3.png" alt="картиночка">
+                    <h3 class="element__denomination">Домбай</h3>
+                    <button class="element__like" aria-label="Лайк"></button>
+                </article>
+
+                <article class="element">
+                    <img class="element__image" src="images/element/__image-4.png" alt="картиночка">
+                    <h3 class="element__denomination">Архыз</h3>
+                    <button class="element__like" aria-label="Лайк"></button>
+                </article>
+
+                <article class="element">
+                    <img class="element__image" src="images/element/__image-5.png" alt="картиночка">
+                    <h3 class="element__denomination">Гора Эльбрус</h3>
+                    <button class="element__like" aria-label="Лайк"></button>
+                </article>
+
+                <article class="element">
+                    <img class="element__image" src="images/element/__image-6.png" alt="картиночка">
+                    <h3 class="element__denomination">Воронеж</h3>
+                    <button class="element__like" aria-label="Лайк"></button>
+                </article>
+
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <p class="footer__copyright">© 2020 Mesto Russia</p>
+        </footer>
+
+        <section class="popup">
+            <form class="popup__form">
+                <button class="popup__close-button" aria-label="Закрыть"></button>
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <input class="popup__field" type="text" placeholder="Введите имя" value="Жак-Ив Кусто">
+                <input class="popup__field" type="text" placeholder="Введите описание" value="Исследователь океана">
+                <input class="popup__submit-button" type="button" value="Сохранить">
+            </form>
+        </section>
+
+    </div>
+    
+<script src="js/pop-up.js"></script>
+<script src="js/redact.js"></script>
+</body>
+</html>
