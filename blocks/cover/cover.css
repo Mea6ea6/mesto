@@ -1,0 +1,22 @@
+.cover {
+    width: calc(100% - 48px * 2);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-image: url(../../images/cover/__overlay.png);
+    display: flex;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0 0 92px;
+}
+@media screen and (max-width: 1279px) {
+    .cover {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .cover {
+        margin-bottom: 64px;
+    }
+}

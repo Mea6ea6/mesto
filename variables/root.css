@@ -1,9 +1,24 @@
 :root {
-    --black: #000;
+    --dark: #2A2C2F;
     --white: #FFF;
-    --gray: #545454;
-    --width: 100%;
-    --hover-transition: opacity 0.3s;
-    --hover-opacity: 0.7;
-    --padding: 0 19px;
+    --gray: #AAA;
+    --body-padding: 0 48px;
+    --width: calc(100% - 100px * 2);
+    --hover-link-transition: opacity 0.2s;
+    --hover-link-opacity: 0.8;
+}
+@media screen and (max-width: 1279px) {
+    :root {
+        --width: 100%;
+    }
+}
+@media screen and (max-width: 1023px) {
+    :root {
+        --body-padding: 0 24px;
+    }
+}
+@media screen and (max-width: 767px) {
+    :root {
+        --body-padding: 0 16px;
+    }
 }

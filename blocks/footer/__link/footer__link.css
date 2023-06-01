@@ -1,0 +1,18 @@
+.footer__link {
+    color: inherit;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    text-decoration: none;
+    margin: 0;
+    transition: var(--hover-link-transition);
+}
+.footer__link:hover {
+    opacity: var(--hover-link-opacity);
+}
+@media screen and (max-width: 767px) {
+    .footer__link {
+        font-size: 24px;
+        line-height: 24px;
+    }
+}

@@ -1,0 +1,17 @@
+.footer {
+    width: 100%;
+    padding: var(--body-padding);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media screen and (max-width: 767px) {
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

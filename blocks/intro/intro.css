@@ -1,0 +1,13 @@
+.intro {
+    width: var(--width);
+    padding: var(--body-padding);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 92px 0;
+}
+@media screen and (max-width: 767px) {
+    .intro {
+        margin: 64px 0;
+    }
+}
