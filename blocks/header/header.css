@@ -1,16 +1,14 @@
 .header {
-    width: 100%;
-    padding: var(--body-padding);
-    margin: 28px 0 56px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    width: var(--width);
+    height: 74px;
+    margin: 45px 0 40px;
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 599px) {
     .header {
-        margin: 16px 0 48px;
+        margin: 28px 0 42px;
     }
 }

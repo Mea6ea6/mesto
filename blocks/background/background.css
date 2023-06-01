@@ -1,3 +1,4 @@
 .background {
-    background:  var(--dark);
+    background: var(--black);
+    width: var(--width);
 }

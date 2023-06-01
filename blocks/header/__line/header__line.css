@@ -1,0 +1,7 @@
+.header__line {
+    background: var(--gray);
+    border: none;
+    width: var(--width);
+    height: 1px;
+    margin: 0;
+}

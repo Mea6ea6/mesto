@@ -1,0 +1,28 @@
+.popup__field {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    width: 358px;
+    margin-bottom: 30px;
+    padding: 0 0 13px;
+    border: none;
+    border-bottom: 1px solid #00000033;
+    outline: none;
+    transition: var(--hover-transition);
+}
+.popup__field::placeholder {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+}
+.popup__field:hover {
+    border-bottom: 1px solid #00000080;
+}
+.popup__field:focus {
+    border-bottom: 1px solid var(--black);
+}
+@media screen and (max-width: 599px) {
+    .popup__field {
+        width: 238px;
+    }
+}

@@ -1,24 +1,11 @@
 :root {
-    --dark: #2A2C2F;
+    --black: #000;
     --white: #FFF;
-    --gray: #AAA;
-    --body-padding: 0 48px;
-    --width: calc(100% - 100px * 2);
-    --hover-link-transition: opacity 0.2s;
-    --hover-link-opacity: 0.8;
-}
-@media screen and (max-width: 1279px) {
-    :root {
-        --width: 100%;
-    }
-}
-@media screen and (max-width: 1023px) {
-    :root {
-        --body-padding: 0 24px;
-    }
-}
-@media screen and (max-width: 767px) {
-    :root {
-        --body-padding: 0 16px;
-    }
+    --gray: #545454;
+    --width: 100%;
+    --transition: all 0.3s;
+    --opacity-5: 0.5;
+    --opacity-6: 0.6;
+    --opacity-8: 0.8;
+    --padding: 0 19px;
 }
