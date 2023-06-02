@@ -3,8 +3,10 @@
     font-weight: 400;
     line-height: 17px;
     width: 358px;
+    height: 27px;
+    box-sizing: border-box;
     margin-bottom: 30px;
-    padding: 0 0 13px;
+    padding: 0 0 10px;
     border: none;
     border-bottom: 1px solid #00000033;
     outline: none;
@@ -12,7 +14,7 @@
 }
 .popup__field::placeholder {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 17px;
 }
 .popup__field:hover {

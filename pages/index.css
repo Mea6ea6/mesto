@@ -2,11 +2,10 @@
 @import url(../vendor/normalize.css);
 /* fonts */
 @import url(../vendor/fonts.css);
-/* root */
-@import url(../variables/root.css);
+/* variables */
+@import url(../vendor/variables.css);
 /* background */
 @import url(../blocks/background/background.css);
-@import url(../blocks/background/_scroll/background_scroll.css);
 /* page */
 @import url(../blocks/page/page.css);
 /* header */
@@ -29,6 +28,7 @@
 /* element */
 @import url(../blocks/element/element.css);
 @import url(../blocks/element/__image/element__image.css);
+@import url(../blocks/element/__additionally/element__additionally.css);
 @import url(../blocks/element/__denomination/element__denomination.css);
 @import url(../blocks/element/__like/element__like.css);
 /* footer */

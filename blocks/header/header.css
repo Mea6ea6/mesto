@@ -1,7 +1,7 @@
 .header {
     width: var(--width);
-    height: 74px;
     margin: 45px 0 40px;
+    border-bottom: 1px solid #545454b3;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -9,6 +9,6 @@
 }
 @media screen and (max-width: 599px) {
     .header {
-        margin: 28px 0 42px;
+        margin: 28px 0 38px;
     }
 }

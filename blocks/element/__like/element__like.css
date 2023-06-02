@@ -8,9 +8,6 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    position: absolute;
-    bottom: 35px;
-    right: 30px;
     transition: var(--transition);
     padding: 0;
 }

@@ -3,7 +3,7 @@
     height: 120px;
     object-fit: cover;
     object-position: center;
-    border-radius: 100%;
+    border-radius: 50%;
     align-self: flex-start;
     pointer-events: none;
 }

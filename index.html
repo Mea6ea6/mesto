@@ -14,7 +14,6 @@
 
         <header class="header">
             <img class="header__logo" src="images/header/__logo.svg" alt="Место">
-            <hr class="header__line">
         </header>
 
         <main class="content">
@@ -23,50 +22,62 @@
                 <img class="profile__avatar" src="images/profile/__avatar.png" alt="не синий, но тоже аватар">
                 <div class="profile__info">
                     <div class="profile__name-wrapp">
-                        <h2 class="profile__name">Жак-Ив Кусто</h2>
-                        <button class="profile__edit-button" aria-label="Редактировать"></button>
+                        <h1 class="profile__name">Жак-Ив Кусто</h1>
+                        <button class="profile__edit-button" aria-label="Редактировать" type="button"></button>
                     </div>
                     <p class="profile__description">Исследователь океана</p>
                 </div>
-                <button class="profile__add-button" aria-label="Новое место"></button>
+                <button class="profile__add-button" aria-label="Новое место" type="button"></button>
             </section>
 
             <section class="elements">
 
                 <article class="element">
-                    <img class="element__image" src="images/element/__image-1.png" alt="картиночка">
-                    <h3 class="element__denomination">Карачаево-Черкессия</h3>
-                    <button class="element__like" aria-label="Лайк"></button>
+                    <img class="element__image" src="images/element/__image-1.png" alt="Карачаево-Черкессия">
+                    <div class="element__additionally">
+                        <h2 class="element__denomination">Карачаево-Черкессия</h2>
+                        <button class="element__like" aria-label="Лайк" type="button"></button>
+                    </div>
                 </article>
 
                 <article class="element">
-                    <img class="element__image" src="images/element/__image-2.png" alt="картиночка">
-                    <h3 class="element__denomination">Тбилиси</h3>
-                    <button class="element__like" aria-label="Лайк"></button>
+                    <img class="element__image" src="images/element/__image-2.png" alt="Тбилиси">
+                    <div class="element__additionally">
+                        <h2 class="element__denomination">Тбилиси</h2>
+                        <button class="element__like" aria-label="Лайк" type="button"></button>
+                    </div>
                 </article>
 
                 <article class="element">
-                    <img class="element__image" src="images/element/__image-3.png" alt="картиночка">
-                    <h3 class="element__denomination">Домбай</h3>
-                    <button class="element__like" aria-label="Лайк"></button>
+                    <img class="element__image" src="images/element/__image-3.png" alt="Домбай">
+                    <div class="element__additionally">
+                        <h2 class="element__denomination">Домбай</h2>
+                        <button class="element__like" aria-label="Лайк" type="button"></button>
+                    </div>
                 </article>
 
                 <article class="element">
-                    <img class="element__image" src="images/element/__image-4.png" alt="картиночка">
-                    <h3 class="element__denomination">Архыз</h3>
-                    <button class="element__like" aria-label="Лайк"></button>
+                    <img class="element__image" src="images/element/__image-4.png" alt="Архыз">
+                    <div class="element__additionally">
+                        <h2 class="element__denomination">Архыз</h2>
+                        <button class="element__like" aria-label="Лайк" type="button"></button>
+                    </div>
                 </article>
 
                 <article class="element">
-                    <img class="element__image" src="images/element/__image-5.png" alt="картиночка">
-                    <h3 class="element__denomination">Гора Эльбрус</h3>
-                    <button class="element__like" aria-label="Лайк"></button>
+                    <img class="element__image" src="images/element/__image-5.png" alt="Гора Эльбрус">
+                    <div class="element__additionally">
+                        <h2 class="element__denomination">Гора Эльбрус</h2>
+                        <button class="element__like" aria-label="Лайк" type="button"></button>
+                    </div>
                 </article>
 
                 <article class="element">
-                    <img class="element__image" src="images/element/__image-6.png" alt="картиночка">
-                    <h3 class="element__denomination">Воронеж</h3>
-                    <button class="element__like" aria-label="Лайк"></button>
+                    <img class="element__image" src="images/element/__image-6.png" alt="Воронеж">
+                    <div class="element__additionally">
+                        <h2 class="element__denomination">Воронеж</h2>
+                        <button class="element__like" aria-label="Лайк" type="button"></button>
+                    </div>
                 </article>
 
             </section>
@@ -77,20 +88,20 @@
             <p class="footer__copyright">© 2020 Mesto Russia</p>
         </footer>
 
-        <section class="popup">
+        <div class="popup">
             <div class="popup__container">
-                <button class="popup__close-button" aria-label="Закрыть"></button>
+                <button class="popup__close-button" aria-label="Закрыть" type="button"></button>
                 <form class="popup__form" method="get">
-                    <label class="popup__title">Редактировать профиль</label>
-                    <input class="popup__field popup__field_name" type="text" oninput="validate(this)" placeholder="Введите имя">
-                    <input class="popup__field popup__field_job" type="text" oninput="validate(this)" placeholder="Введите описание">
+                    <h2 class="popup__title">Редактировать профиль</h2>
+                    <input class="popup__field field_name" minlength="1" type="text" placeholder="Введите имя">
+                    <input class="popup__field field_job" minlength="1" type="text" placeholder="Введите описание">
                     <input class="popup__submit-button" type="submit" value="Сохранить">
                 </form>
             </div>
-        </section>
+        </div>
 
     </div>
     
-<script src="js/pop-up.js"></script>
+<script src="scripts/index.js"></script>
 </body>
 </html>
