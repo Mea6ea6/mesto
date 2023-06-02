@@ -5,8 +5,8 @@ let submitButton = popup.querySelector('.popup__form');
 let nameOutput = document.querySelector('.profile__name');
 let jobOutput = document.querySelector('.profile__description');
 let formElement = document.querySelector('.popup__form');
-let nameInput = formElement.querySelector('.field_name');
-let jobInput = formElement.querySelector('.field_job');
+let nameInput = formElement.querySelector('.field_type_name');
+let jobInput = formElement.querySelector('.field_type_job');
 let popupOpened = 'popup_opened';
 
 openButton.addEventListener('click',() => {
