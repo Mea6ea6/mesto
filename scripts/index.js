@@ -9,19 +9,26 @@ let nameInput = formElement.querySelector('.popup__field_type_name');
 let jobInput = formElement.querySelector('.popup__field_type_job');
 let popupOpened = 'popup_opened';
 
-openButton.addEventListener('click',() => {
+function popupOpen() {
     popup.classList.add(popupOpened);
+}
+function popupClose() {
+    popup.classList.remove(popupOpened);
+}
+
+openButton.addEventListener('click',() => {
     nameInput.value = nameOutput.textContent;
     jobInput.value = jobOutput.textContent;
+    popupOpen();
 });
 closeButton.addEventListener('click',() => {
-    popup.classList.remove(popupOpened);
+    popupClose();
 });
 
 function handleFormSubmit (evt) {
     evt.preventDefault();
     nameOutput.textContent = nameInput.value;
     jobOutput.textContent = jobInput.value;
-    popup.classList.remove(popupOpened);
+    popupClose();
 }
 formElement.addEventListener('submit', handleFormSubmit);
