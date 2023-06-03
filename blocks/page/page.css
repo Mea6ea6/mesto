@@ -3,7 +3,6 @@
     color: var(--white);
     max-width: 880px;
     min-height: 100vh;
-    padding: 0 9px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -17,6 +16,5 @@
 @media screen and (max-width: 599px) {
     .page {
         max-width: 320px;
-        padding: 0;
     }
 }
