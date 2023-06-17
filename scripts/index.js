@@ -22,7 +22,7 @@ const initialCards = [
   {
     name: "Байкал",
     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
-  },
+  }
 ];
 
 const cards = document.querySelector(".elements");
@@ -37,6 +37,21 @@ function createCard(name, link, position = "append") {
   cardImage.setAttribute("src", link);
   cardImage.setAttribute("alt", "место: " + name);
 
+  const popupCard = document.querySelector(".popup_card");
+  const closeButtonCard = popupCard.querySelector(".popup__close-button");
+  const popupImage = popupCard.querySelector(".popup__image");
+  const popupCaption = popupCard.querySelector(".popup__figcaption");
+  // Открытие карточки
+  cardImage.addEventListener("click", () => {
+      buttonOpen(popupCard);
+      popupImage.src = link;
+      popupImage.alt = name;
+      popupCaption.textContent = name;
+  });
+  closeButtonCard.addEventListener("click", () => {
+    buttonClose(popupCard);
+  });
+
   const cardDelete = card.querySelector(".element__delete");
   cardDelete.addEventListener("click", function () {
     card.remove();
@@ -44,7 +59,7 @@ function createCard(name, link, position = "append") {
   
   card.querySelector(".element__like").addEventListener("click", function (evt) {
       evt.target.classList.toggle("element__like_active");
-    });
+  });
   
   switch (position) {
     case "append":
@@ -119,23 +134,4 @@ formAddElement.addEventListener("submit", function (evt) {
   evt.preventDefault();
   createCard(namedInput.value, linkInput.value, "prepend");
   buttonClose(popupAdd);
-});
-
-
-const openButtonImage = document.querySelectorAll(".element__image");
-const popupCard = document.querySelector(".popup_card");
-const closeButtonCard = popupCard.querySelector(".popup__close-button");
-const popupImage = popupCard.querySelector(".popup__image");
-const popupCaption = popupCard.querySelector(".popup__figcaption");
-// Открытие карточки
-openButtonImage.forEach((cardImagePreview) => {
-  cardImagePreview.addEventListener("click", () => {
-      buttonOpen(popupCard);
-      // popupImage.src = initialCards.link;
-      // popupImage.alt = initialCards.name;
-      popupCaption.textContent = initialCards.name;
-    });
-});
-closeButtonCard.addEventListener("click", () => {
-  buttonClose(popupCard);
 });
