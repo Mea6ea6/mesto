@@ -1,4 +1,5 @@
 .element__image {
+    color: var(--black);
     width: 282px;
     height: 282px;
     margin-bottom: 25px;
