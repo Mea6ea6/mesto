@@ -1,56 +1,38 @@
-const initialCards = [
-  {
-    name: "Архыз",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
-  },
-  {
-    name: "Челябинская область",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
-  },
-  {
-    name: "Иваново",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
-  },
-  {
-    name: "Камчатка",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
-  },
-  {
-    name: "Холмогорский район",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
-  },
-  {
-    name: "Байкал",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
-  }
-];
+const popupOpened = "popup_opened";
+// ---- Функции открытия и закрытия поп-апов
+function openButton(popup) {
+  popup.classList.add(popupOpened);
+}
+function closeButton(popup) {
+  popup.classList.remove(popupOpened);
+}
+document.querySelectorAll('.popup__close-button').forEach(button => {
+  const popupClose = button.closest('.popup');
+  button.addEventListener('click', () => closeButton(popupClose));
+}); 
+
 
 const cards = document.querySelector(".elements");
 const cardTemplate = document.querySelector("#card-template").content.querySelector(".element");
-// Карточки
-function createCard(name, link, position = "append") {
+const popupCard = document.querySelector(".popup_card");
+const popupImage = popupCard.querySelector(".popup__image");
+const popupCaption = popupCard.querySelector(".popup__figcaption");
+// ---- Карточки
+function createCard({name, link}) {
   const card = cardTemplate.cloneNode(true);
   const cardTitle = card.querySelector(".element__denomination");
   const cardImage = card.querySelector(".element__image");
-  
+
   cardTitle.textContent = name;
   cardImage.setAttribute("src", link);
   cardImage.setAttribute("alt", "место: " + name);
-
-  const popupCard = document.querySelector(".popup_card");
-  const closeButtonCard = popupCard.querySelector(".popup__close-button");
-  const popupImage = popupCard.querySelector(".popup__image");
-  const popupCaption = popupCard.querySelector(".popup__figcaption");
-  // Открытие карточки
+  
   cardImage.addEventListener("click", () => {
-      buttonOpen(popupCard);
+      openButton(popupCard);
       popupImage.src = link;
       popupImage.alt = name;
       popupCaption.textContent = name;
-  });
-  closeButtonCard.addEventListener("click", () => {
-    buttonClose(popupCard);
-  });
+  }); 
 
   const cardDelete = card.querySelector(".element__delete");
   cardDelete.addEventListener("click", function () {
@@ -60,78 +42,65 @@ function createCard(name, link, position = "append") {
   card.querySelector(".element__like").addEventListener("click", function (evt) {
       evt.target.classList.toggle("element__like_active");
   });
-  
+
+  return card;
+}
+
+function renderCard(data, position = "append") {
   switch (position) {
     case "append":
-      cards.append(card);
+      cards.append(createCard(data));
       break;
     case "prepend":
-      cards.prepend(card);
+      cards.prepend(createCard(data));
       break;
     default:
       break;
   }
-}
-initialCards.forEach((item, index) => {
-  createCard(initialCards[index].name, initialCards[index].link);
+  console.log(data)
+};
+
+initialCards.forEach(function (item) {
+  renderCard(item);
 });
-
-
-const popupOpened = "popup_opened";
-// Функции открытия и закрытия поп-апов
-function buttonOpen(popup) {
-  popup.classList.add(popupOpened);
-}
-function buttonClose(popup) {
-  popup.classList.remove(popupOpened);
-}
 
 
 const openButtonRedact = document.querySelector(".profile__edit-button");
 const popupRedact = document.querySelector(".popup_redact");
-const closeButtonRedact = popupRedact.querySelector(".popup__close-button");
 const formRedactElement = popupRedact.querySelector(".popup__form");
-let nameInput = formRedactElement.querySelector(".popup__field_type_name");
-let jobInput = formRedactElement.querySelector(".popup__field_type_job");
-let nameOutput = document.querySelector(".profile__name");
-let jobOutput = document.querySelector(".profile__description");
-// Поп-ап редактирования
+const nameInput = formRedactElement.querySelector(".popup__field_type_name");
+const jobInput = formRedactElement.querySelector(".popup__field_type_job");
+const nameOutput = document.querySelector(".profile__name");
+const jobOutput = document.querySelector(".profile__description");
+// ---- Поп-ап редактирования
 openButtonRedact.addEventListener("click", () => {
-  buttonOpen(popupRedact);
+  openButton(popupRedact);
   nameInput.value = nameOutput.textContent;
   jobInput.value = jobOutput.textContent;
 });
-closeButtonRedact.addEventListener("click", () => {
-  buttonClose(popupRedact);
-});
-// Редактирование профиля
-function handleFormSubmit(evt) {
+// ---- Редактирование профиля
+formRedactElement.addEventListener("submit", function (evt) {
   evt.preventDefault();
   nameOutput.textContent = nameInput.value;
   jobOutput.textContent = jobInput.value;
-  buttonClose(popupRedact);
-}
-formRedactElement.addEventListener("submit", handleFormSubmit);
+  closeButton(popupRedact);
+});
 
 
 const openButtonAdd = document.querySelector(".profile__add-button");
 const popupAdd = document.querySelector(".popup_add");
-const closeButtonAdd = popupAdd.querySelector(".popup__close-button");
 const formAddElement = popupAdd.querySelector(".popup__form");
-let namedInput = formAddElement.querySelector(".popup__field_type_named");
-let linkInput = formAddElement.querySelector(".popup__field_type_link");
-// Поп-ап добавления
+const namedInput = formAddElement.querySelector(".popup__field_type_named");
+const linkInput = formAddElement.querySelector(".popup__field_type_link");
+// ---- Поп-ап добавления
 openButtonAdd.addEventListener("click", () => {
   namedInput.value = "";
   linkInput.value = "";
-  buttonOpen(popupAdd);
+  openButton(popupAdd);
 });
-closeButtonAdd.addEventListener("click", () => {
-  buttonClose(popupAdd);
-});
-// Добавления места
+// ---- Добавления места
 formAddElement.addEventListener("submit", function (evt) {
   evt.preventDefault();
-  createCard(namedInput.value, linkInput.value, "prepend");
-  buttonClose(popupAdd);
+  renderCard(namedInput.value, linkInput.value, "prepend");
+  closeButton(popupAdd);
 });
