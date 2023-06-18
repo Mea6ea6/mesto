@@ -101,6 +101,8 @@ openButtonAdd.addEventListener("click", () => {
 // ---- Добавления места
 formAddElement.addEventListener("submit", function (evt) {
   evt.preventDefault();
-  renderCard(namedInput.value, linkInput.value, "prepend");
+  preRenderCardNamed = namedInput.value;
+  preRenderCardLink = linkInput.value
+  renderCard({name: preRenderCardNamed, link: preRenderCardLink}, "prepend")
   closeButton(popupAdd);
 });
