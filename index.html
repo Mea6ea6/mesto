@@ -63,9 +63,15 @@
             <div class="popup__container">
                 <button class="popup__close-button" aria-label="Закрыть" type="button"></button>
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <form class="popup__form" method="get" name="edit-pofile-form">
-                    <input class="popup__field popup__field_type_name" minlength="1" type="text" name="name" placeholder="Введите имя">
-                    <input class="popup__field popup__field_type_job" minlength="1" type="text" name="job" placeholder="Введите описание">
+                <form class="popup__form" method="get" name="edit-pofile-form" novalidate>
+                    <label class="popup__field">
+                        <input class="popup__input popup__input_type_name" id="name" minlength="2" maxlength="40" type="text" name="name" placeholder="Введите имя" autocomplete="off" required>
+                        <span class="popup__error" id="name-error"></span>
+                    </label>
+                    <label class="popup__field">
+                        <input class="popup__input popup__input_type_job" id="job" minlength="2" maxlength="200" type="text" name="job" placeholder="Введите описание" autocomplete="off" required>
+                        <span class="popup__error" id="job-error"></span>
+                    </label>
                     <button class="popup__submit-button" aria-label="Сохранить" type="submit">Сохранить</button>
                 </form>
             </div>
@@ -75,9 +81,15 @@
             <div class="popup__container">
                 <button class="popup__close-button" aria-label="Закрыть" type="button"></button>
                 <h2 class="popup__title">Новое место</h2>
-                <form class="popup__form" method="get" name="edit-pofile-form">
-                    <input class="popup__field popup__field_type_named" minlength="1" type="text" name="named" placeholder="Название">
-                    <input class="popup__field popup__field_type_link" minlength="1" type="text" name="link" placeholder="Ссылка на картинку">
+                <form class="popup__form" method="get" name="add-form" novalidate>
+                    <label class="popup__field">
+                        <input class="popup__input popup__input_type_named" id="named" minlength="2" maxlength="30" type="text" name="named" placeholder="Название" autocomplete="off" required>
+                        <span class="popup__error" id="named-error"></span>
+                    </label>
+                    <label class="popup__field">
+                        <input class="popup__input popup__input_type_link" id="link" minlength="2" type="url" name="link" placeholder="Ссылка на картинку" required>
+                        <span class="popup__error" id="link-error"></span>
+                    </label>
                     <button class="popup__submit-button" aria-label="Сохранить" type="submit">Сохранить</button>
                 </form>
             </div>
@@ -94,6 +106,7 @@
     </div>
     
 <script src="scripts/cards.js"></script>
+<script src="scripts/validation.js"></script>
 <script src="scripts/index.js"></script>
 </body>
 </html>

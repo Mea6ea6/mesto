@@ -7,6 +7,7 @@
     padding: 34px 36px 37px;
     position: relative;
     border-radius: 10px;
+    cursor: default;
 }
 @media screen and (max-width: 599px) {
     .popup__container {
