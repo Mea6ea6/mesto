@@ -4,7 +4,7 @@ __Ссылка на GHPage →__ _[ссылка](https://mea6ea6.github.io/my-re
 
 ------
 
-#### Проектная работа №5
+#### Проектная работа №6
 
 __Название:__ «Место»  
 
@@ -14,6 +14,6 @@ __Инструментальные средства разработки:__ html
 
 
 __Доп ссылки:__
-_[figma](https://www.figma.com/file/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5?node-id=0%3A1)_
+_[figma](https://www.figma.com/file/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-6?node-id=0%3A1)_
 
 ------
