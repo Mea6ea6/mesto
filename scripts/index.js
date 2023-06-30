@@ -3,7 +3,7 @@ const popupOpened = 'popup_opened';
 
 // ---- Функции открытия и закрытия поп-апов
 function openButton(popup) {
-  enableValidation();
+  enableValidation(config);
   popup.classList.add(popupOpened);
 };
 function closeButton(popup) {
