@@ -1,11 +1,3 @@
-const config = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__submit-button',
-  inactiveButtonClass: 'popup__submit-button_disabled',
-  inputErrorClass: 'popup__input_state_invalid'
-}
-
 // ---- Валидация
 function showError(inputElement, errorElement, config) {
   inputElement.classList.add(config.inputErrorClass);
@@ -26,21 +18,21 @@ function checkInputValidity(inputElement, formElement, config) {
   }
 };
 
-function disabledButton(buttonElement, config) {
+function disableButton(buttonElement, config) {
     buttonElement.disabled = 'disabled';
     buttonElement.classList.add(config.inactiveButtonClass);
 };
-function enabledButton(buttonElement, config) {
+function enableButton(buttonElement, config) {
     buttonElement.disabled = false;
     buttonElement.classList.remove(config.inactiveButtonClass);
 };
 
 function toggleButtonState(buttonElement, isActive, config) {
   if (!isActive) {
-    disabledButton(buttonElement, config);
+    disableButton(buttonElement, config);
   }
   else {
-    enabledButton(buttonElement, config);
+    enableButton(buttonElement, config);
   }
 };
 
@@ -50,7 +42,7 @@ function setEventListener(formElement, config) {
 
   toggleButtonState(submitButton, formElement.checkValidity(), config);
 
-  [...inputList].forEach(function (inputElement) {
+  inputList.forEach(function (inputElement) {
     inputElement.addEventListener('input', () => {
       toggleButtonState(submitButton, formElement.checkValidity(), config);
       checkInputValidity(inputElement, formElement, config);
@@ -69,3 +61,13 @@ function enableValidation(config) {
     setEventListener(formElement, config);
   });
 };
+
+enableValidation(config);
+
+clearFormErrors = (form, config) => {
+  const inputList = form.querySelectorAll(config.inputSelector);
+  inputList.forEach(input => {
+    const errorElement = form.querySelector(`#${input.name}-error`);
+    hideError(input, errorElement, config);
+  })
+}

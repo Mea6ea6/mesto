@@ -50,7 +50,7 @@
 
         <template id="card-template">
             <article class="element">
-                <button class="element__delete"></button>
+                <button class="element__delete" aria-label="Удалить"></button>
                 <img class="element__image">
                 <div class="element__additionally">
                     <h2 class="element__denomination"></h2>
@@ -87,7 +87,7 @@
                         <span class="popup__error" id="named-error"></span>
                     </label>
                     <label class="popup__field">
-                        <input class="popup__input popup__input_type_link" id="link" minlength="2" type="url" name="link" placeholder="Ссылка на картинку" required>
+                        <input class="popup__input popup__input_type_link" id="link" type="url" name="link" placeholder="Ссылка на картинку" required>
                         <span class="popup__error" id="link-error"></span>
                     </label>
                     <button class="popup__submit-button" aria-label="Сохранить" type="submit">Сохранить</button>
@@ -98,7 +98,7 @@
         <div class="popup popup_card">
             <figure class="popup__figure">
                 <button class="popup__close-button" aria-label="Закрыть" type="button"></button>
-                <img class="popup__image" src="images/xicon/xicon.svg" alt="будующая картинка">
+                <img class="popup__image" src="images/xicon/xicon.svg" alt="будущая картинка">
                 <figcaption class="popup__figcaption"></figcaption>
             </figure>
         </div>
@@ -106,6 +106,7 @@
     </div>
     
 <script src="scripts/cards.js"></script>
+<script src="scripts/constants.js"></script>
 <script src="scripts/validation.js"></script>
 <script src="scripts/index.js"></script>
 </body>

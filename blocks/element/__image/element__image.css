@@ -1,5 +1,6 @@
 .element__image {
-    color: var(--black);
+    color: var(--white);
+    background-color: var(--black);
     width: 282px;
     height: 282px;
     margin-bottom: 25px;
