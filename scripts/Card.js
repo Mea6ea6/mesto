@@ -32,9 +32,8 @@ class Card {
     });
 
     cardImage.addEventListener("click", () => {
-      this._handleClickOpen(cardTitle, cardImage);
+      this._handleClickOpen(this._data);
     });
-
 
     this._card.querySelector(".element__like").addEventListener("click", function (evt) {
       evt.target.classList.toggle("element__like_active");
