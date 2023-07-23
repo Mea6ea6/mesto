@@ -36,63 +36,45 @@ function closePopupByEsc(evt) {
   if (evt.key === 'Escape') {
     closePopup(document.querySelector('.popup_opened'));
   }
-}
+};
 
 
-const cardElement = new Card('data');
-console.log(cardElement);
-
-// const cards = document.querySelector('.elements');
-// const cardTemplate = document.querySelector('#card-template').content.querySelector('.element');
-// const popupCard = document.querySelector('.popup_card');
-// const popupImage = popupCard.querySelector('.popup__image');
-// const popupCaption = popupCard.querySelector('.popup__figcaption');
+const cards = document.querySelector('.elements');
+const popupCard = document.querySelector('.popup_card');
+const popupImage = popupCard.querySelector('.popup__image');
+const popupCaption = popupCard.querySelector('.popup__figcaption');
 
 // ---- Карточки
-// function createCard({name, link}) {
-//   const card = cardTemplate.cloneNode(true);
-//   const cardTitle = card.querySelector('.element__denomination');
-//   const cardImage = card.querySelector('.element__image');
 
-//   cardTitle.textContent = name;
-//   cardImage.setAttribute('src', link);
-//   cardImage.setAttribute('alt', 'место: ' + name);
-  
-//   cardImage.addEventListener('click', () => {
-//       openPopup(popupCard);
-//       popupImage.src = link;
-//       popupImage.alt = name;
-//       popupCaption.textContent = name;
-//   }); 
+function handleClickOpen() {
+  openPopup(popupCard);
+  popupCaption.textContent = this._data.name;
+  popupImage.setAttribute("src", this._data.link);
+  popupImage.setAttribute("alt", "место: " + this._data.name);
+};
 
-//   const cardDelete = card.querySelector('.element__delete');
-//   cardDelete.addEventListener('click', function () {
-//     card.remove();
-//   });
-  
-//   card.querySelector('.element__like').addEventListener('click', function (evt) {
-//       evt.target.classList.toggle('element__like_active');
-//   });
+function handleClickDelete(cardElement) {
+  cardElement.remove();
+};
 
-//   return card;
-// }
+ function renderCard(data, position = 'append') {
+  const cardElement = new Card({data, handleClickOpen, handleClickDelete}, '#card-template').createCard();
 
-// function renderCard(data, position = 'append') {
-//   switch (position) {
-//     case 'append':
-//       cards.append(createCard(data));
-//       break;
-//     case 'prepend':
-//       cards.prepend(createCard(data));
-//       break;
-//     default:
-//       break;
-//   };
-// };
+  switch (position) {
+    case 'append':
+      cards.append(cardElement);
+      break;
+    case 'prepend':
+      cards.prepend(cardElement);
+      break;
+    default:
+      break;
+  };
+ };
 
-// initialCards.forEach(function (item) {
-//   renderCard(item);
-// });
+ initialCards.forEach(function (item) {
+   renderCard(item);
+ });
 
 
 const openButtonRedact = document.querySelector('.profile__edit-button');

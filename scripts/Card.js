@@ -1,36 +1,46 @@
 class Card {
-  constructor(data) {
-    this._data = data;
+  _data;
+  _link;
+  _card;
+  _templateSelector;
+  _handleClickOpen;
+  _handleClickDelete;
+
+  _getTemplate() {
+    return document.querySelector(this._templateSelector).content.querySelector('.element').cloneNode(true);
   }
 
-  createCard({ name, link }) {
-    const card = cardTemplate.cloneNode(true);
-    const cardTitle = card.querySelector(".element__denomination");
-    const cardImage = card.querySelector(".element__image");
+  constructor({data, handleClickOpen, handleClickDelete}, templateSelector) {
+    this._data = data;
+    this._templateSelector = templateSelector;
+    this._handleClickOpen = handleClickOpen;
+    this._handleClickDelete = handleClickDelete;
+  }
 
-    cardTitle.textContent = name;
-    cardImage.setAttribute("src", link);
-    cardImage.setAttribute("alt", "место: " + name);
+  createCard() {
+    this._card = this._getTemplate();
+    const cardTitle = this._card.querySelector(".element__denomination");
+    const cardImage = this._card.querySelector(".element__image");
+    const cardDelete = this._card.querySelector(".element__delete");
+
+    cardTitle.textContent = this._data.name;
+    cardImage.setAttribute("src", this._data.link);
+    cardImage.setAttribute("alt", "место: " + this._data.name);
+
+    cardDelete.addEventListener("click", () => {
+      this._handleClickDelete(this._card);
+    });
 
     cardImage.addEventListener("click", () => {
-      openPopup(popupCard);
-      popupImage.src = link;
-      popupImage.alt = name;
-      popupCaption.textContent = name;
+      this._handleClickOpen(this._card)
     });
 
-    const cardDelete = card.querySelector(".element__delete");
-    cardDelete.addEventListener("click", function () {
-      card.remove();
+
+    this._card.querySelector(".element__like").addEventListener("click", function (evt) {
+      evt.target.classList.toggle("element__like_active");
     });
 
-    card
-      .querySelector(".element__like")
-      .addEventListener("click", function (evt) {
-        evt.target.classList.toggle("element__like_active");
-      });
-
-    return card;
+    return this._card;
   }
 }
 
