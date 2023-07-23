@@ -46,11 +46,11 @@ const popupCaption = popupCard.querySelector('.popup__figcaption');
 
 // ---- Карточки
 
-function handleClickOpen() {
+function handleClickOpen(cardTitle, cardImage) {
   openPopup(popupCard);
-  popupCaption.textContent = this._data.name;
-  popupImage.setAttribute("src", this._data.link);
-  popupImage.setAttribute("alt", "место: " + this._data.name);
+  popupCaption.textContent = cardTitle.textContent;
+  popupImage.setAttribute("src", cardImage.src);
+  popupImage.setAttribute("alt", "место: " + cardImage.alt);
 };
 
 function handleClickDelete(cardElement) {

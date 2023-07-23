@@ -32,7 +32,7 @@ class Card {
     });
 
     cardImage.addEventListener("click", () => {
-      this._handleClickOpen(this._card)
+      this._handleClickOpen(cardTitle, cardImage);
     });
 
 
