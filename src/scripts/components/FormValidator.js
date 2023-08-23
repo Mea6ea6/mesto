@@ -1,5 +1,5 @@
-// ---- Валидация
 class FormValidator {
+
   constructor(config, formElement) {
     this._formSelector = config.formSelector;
     this._inputSelector = config.inputSelector;
@@ -71,8 +71,8 @@ class FormValidator {
       const errorElement = document.querySelector(`#${inputElement.name}-error`);
       this._hideError(inputElement, errorElement);
     });
-  };
+  }
+
 };
 
 export { FormValidator };
-
