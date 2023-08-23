@@ -7,14 +7,14 @@ import {
   nameInput,
   infoInput,
   elementList,
-} from '../scripts/utils/constants.js';
-import { initialCards } from '../scripts/utils/cards.js';
-import { Card } from '../scripts/components/Card.js';
-import { FormValidator } from '../scripts/components/FormValidator.js';
-import { UserInfo } from '../scripts/components/UserInfo.js';
-import { Section } from '../scripts/components/Section.js';
-import { PopupWithForm } from '../scripts/components/PopupWithForm.js';
-import { PopupWithImage } from '../scripts/components/PopupWithImage.js';
+} from './scripts/utils/constants.js';
+import { initialCards } from './scripts/utils/cards.js';
+import { Card } from './scripts/components/Card.js';
+import { FormValidator } from './scripts/components/FormValidator.js';
+import { UserInfo } from './scripts/components/UserInfo.js';
+import { Section } from './scripts/components/Section.js';
+import { PopupWithForm } from './scripts/components/PopupWithForm.js';
+import { PopupWithImage } from './scripts/components/PopupWithImage.js';
 
 
 
