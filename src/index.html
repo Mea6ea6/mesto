@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./images/xicon/xicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="./pages/index.css">
+    <link rel="shortcut icon" href="<%=require('./images/xicon/xicon.svg')%>" type="image/x-icon">
     <title>Профиль</title>
 </head>
 <body class="background">
@@ -13,13 +12,13 @@
     <div class="page">
 
         <header class="header">
-            <img class="header__logo" src="./images/header/__logo.svg" alt="Место">
+            <img class="header__logo" src="<%=require('./images/header/__logo.svg')%>" alt="Место">
         </header>
 
         <main class="content">
 
             <section class="profile">
-                <img class="profile__avatar" src="./images/profile/__avatar.png" alt="не синий, но тоже аватар">
+                <img class="profile__avatar" src="<%=require('./images/profile/__avatar.png')%>" alt="не синий, но тоже аватар">
                 <div class="profile__info">
                     <div class="profile__name-wrapp">
                         <h1 class="profile__name"></h1>
@@ -88,13 +87,12 @@
         <div class="popup popup_card" id="popup-card">
             <figure class="popup__figure">
                 <button class="popup__close-button" aria-label="Закрыть" type="button"></button>
-                <img class="popup__image" src="./images/xicon/xicon.svg" alt="будущая картинка">
+                <img class="popup__image" alt="будущая картинка">
                 <figcaption class="popup__figcaption"></figcaption>
             </figure>
         </div>
 
     </div>
-    
-    <script type="module" src="./index.js"></script>
+
 </body>
 </html>

@@ -1,3 +1,4 @@
+import './index.css'
 import { 
   config,
   formRedactElement,
@@ -7,35 +8,36 @@ import {
   nameInput,
   infoInput,
   elementList,
-} from './scripts/utils/constants.js';
-import { initialCards } from './scripts/utils/cards.js';
-import { Card } from './scripts/components/Card.js';
-import { FormValidator } from './scripts/components/FormValidator.js';
-import { UserInfo } from './scripts/components/UserInfo.js';
-import { Section } from './scripts/components/Section.js';
-import { PopupWithForm } from './scripts/components/PopupWithForm.js';
-import { PopupWithImage } from './scripts/components/PopupWithImage.js';
+  userName,
+  userDescription,
+} from '../scripts/utils/constants.js';
+import { initialCards } from '../scripts/utils/cards.js';
+import { Card } from '../scripts/components/Card.js';
+import { FormValidator } from '../scripts/components/FormValidator.js';
+import { UserInfo } from '../scripts/components/UserInfo.js';
+import { Section } from '../scripts/components/Section.js';
+import { PopupWithForm } from '../scripts/components/PopupWithForm.js';
+import { PopupWithImage } from '../scripts/components/PopupWithImage.js';
 
 
 
 const userInfo = new UserInfo({
-  profile: document.querySelector('.profile__name'),
-  info: document.querySelector('.profile__description')
+  profile: userName,
+  info: userDescription
 });
 userInfo.setUserData({profile: 'Игорь Малик', info: 'Профессиональный прожигатель времени'});
-userInfo.renewUserData();
 
 
 
-function renderCard(data) {
+function createCard(data) {
   const newCard = new Card(data.name, data.link, '#card-template', handleCardClick);
   return newCard.createCard();
 }
 const cardSection = new Section({
   items: initialCards,
-  renderer: renderCard,
-}, elementList);
-cardSection.renderItem();
+  renderer: createCard,
+});
+cardSection.renderItems();
 
 
 
@@ -47,10 +49,7 @@ function handleCardClick(imgLink, caption){
 
 const popupFormEdit = new PopupWithForm('#popup-redact', {
   submitHandler: (data) =>{
-    userInfo.setUserData({
-      profile: data.profile,
-      info: data.info
-    });
+    userInfo.setUserData(data);
     popupFormEdit.close();
   }
 });
@@ -59,7 +58,7 @@ popupFormEdit.setEventListeners();
 const popupFormAdd = new PopupWithForm('#popup-add', {
   selectorForm: '.popup__form',
   submitHandler: (data) => {
-    const newCard = renderCard(data);
+    const newCard = createCard(data);
     cardSection.addItem(newCard);
   }
 })

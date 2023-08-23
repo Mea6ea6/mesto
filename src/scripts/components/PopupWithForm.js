@@ -10,14 +10,14 @@ class PopupWithForm extends Popup{
     }
 
     _getInputValues() {
-        this._formValues = {};
-        [...this._inputList].forEach(input => {
-            this._formValues[input.name] = input.value;
+        const formValues = {};
+        this._inputList.forEach(input => {
+            formValues[input.name] = input.value;
         });
-        return this._formValues;
+        return formValues;
     }
 
-    setEventListeners(){
+    setEventListeners() {
         super.setEventListeners();
         this._formElement.addEventListener('submit', (evt) => {
             evt.preventDefault();
@@ -26,9 +26,8 @@ class PopupWithForm extends Popup{
         });
     }
 
-    close(){
-        this._popupElement.classList.remove('popup_opened');
-        document.removeEventListener('keydown', super._closePopupByEsc);
+    close() {
+        super.close();
         this._formElement.reset();
     }
 
