@@ -1,27 +1,27 @@
 class UserInfo {
 
-    constructor({name, info}) {
-        this._name = null;
+    constructor({profile, info}) {
+        this._profile = null;
         this._info = null;
-        this._nameElement = name;
+        this._nameElement = profile;
         this._infoElement = info;
     }
 
     getUserData() {
         return {
-            name:this._name,
+            profile:this._profile,
             info:this._info
         }
     }
 
     setUserData(userData) {
-        this._name = userData.name;
+        this._profile = userData.profile;
         this._info = userData.info;
         this.renewUserData();
     }
 
     renewUserData() {
-        this._nameElement.textContent = this._name;
+        this._nameElement.textContent = this._profile;
         this._infoElement.textContent = this._info;
     }
     

@@ -19,10 +19,10 @@ import { PopupWithImage } from './scripts/components/PopupWithImage.js';
 
 
 const userInfo = new UserInfo({
-  name: document.querySelector('.profile__name'),
+  profile: document.querySelector('.profile__name'),
   info: document.querySelector('.profile__description')
 });
-userInfo.setUserData({name: 'Игорь Малик', info: 'Профессиональный прожигатель времени'});
+userInfo.setUserData({profile: 'Игорь Малик', info: 'Профессиональный прожигатель времени'});
 userInfo.renewUserData();
 
 
@@ -48,7 +48,7 @@ function handleCardClick(imgLink, caption){
 const popupFormEdit = new PopupWithForm('#popup-redact', {
   submitHandler: (data) =>{
     userInfo.setUserData({
-      name: data.name,
+      profile: data.profile,
       info: data.info
     });
     popupFormEdit.close();
@@ -70,7 +70,7 @@ popupFormAdd.setEventListeners();
 function handlePopupRedact() {
   popupFormEdit.open();
   const dataUser = userInfo.getUserData();
-  nameInput.value = dataUser.name;
+  nameInput.value = dataUser.profile;
   infoInput.value = dataUser.info;
   validationCard.clearFormErrors();
 }
