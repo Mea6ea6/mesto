@@ -12,9 +12,9 @@ class UserInfo {
         }
     }
 
-    setUserData({profile, info}) {
-        this._nameElement.textContent = profile;
-        this._infoElement.textContent = info;
+    setUserData(data) {
+        this._nameElement.textContent = data.profile;
+        this._infoElement.textContent = data.info;
     }
     
 }
