@@ -14,6 +14,3 @@ export const openButtonRedact = document.querySelector('.profile__edit-button');
 export const openButtonAdd = document.querySelector('.profile__add-button');
 export const nameInput = formRedactElement.querySelector('.popup__input_type_name');
 export const infoInput = formRedactElement.querySelector('.popup__input_type_info');
-export const elementList = document.querySelector('.elements');
-export const userName = document.querySelector('.profile__name');
-export const userDescription = document.querySelector('.profile__description')

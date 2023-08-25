@@ -1,28 +1,20 @@
 class UserInfo {
 
-    constructor({profile, info}) {
-        this._profile = null;
-        this._info = null;
-        this._nameElement = profile;
-        this._infoElement = info;
+    constructor({profileSelector, infoSelector}) {
+        this._nameElement = document.querySelector(profileSelector); 
+        this._infoElement = document.querySelector(infoSelector);
     }
 
     getUserData() {
         return {
-            profile:this._profile,
-            info:this._info
+            profile: this._nameElement.textContent,
+            info: this._infoElement.textContent
         }
     }
 
-    setUserData(userData) {
-        this._profile = userData.profile;
-        this._info = userData.info;
-        this.renewUserData();
-    }
-
-    renewUserData() {
-        this._nameElement.textContent = this._profile;
-        this._infoElement.textContent = this._info;
+    setUserData({profile, info}) {
+        this._nameElement.textContent = profile;
+        this._infoElement.textContent = info;
     }
     
 }

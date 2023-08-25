@@ -7,9 +7,6 @@ import {
   openButtonAdd,
   nameInput,
   infoInput,
-  elementList,
-  userName,
-  userDescription,
 } from '../scripts/utils/constants.js';
 import { initialCards } from '../scripts/utils/cards.js';
 import { Card } from '../scripts/components/Card.js';
@@ -22,8 +19,8 @@ import { PopupWithImage } from '../scripts/components/PopupWithImage.js';
 
 
 const userInfo = new UserInfo({
-  profile: userName,
-  info: userDescription
+  profileSelector: '.profile__name',
+  infoSelector: '.profile__description'
 });
 userInfo.setUserData({profile: 'Игорь Малик', info: 'Профессиональный прожигатель времени'});
 
@@ -33,10 +30,11 @@ function createCard(data) {
   const newCard = new Card(data.name, data.link, '#card-template', handleCardClick);
   return newCard.createCard();
 }
+
 const cardSection = new Section({
   items: initialCards,
   renderer: createCard,
-});
+}, '.elements');
 cardSection.renderItems();
 
 
@@ -48,7 +46,7 @@ function handleCardClick(imgLink, caption){
 }
 
 const popupFormEdit = new PopupWithForm('#popup-redact', {
-  submitHandler: (data) =>{
+  submitHandler: (data) => {
     userInfo.setUserData(data);
     popupFormEdit.close();
   }
