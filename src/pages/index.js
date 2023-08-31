@@ -6,7 +6,7 @@ import {
   openButtonRedact,
   openButtonAdd,
   nameInput,
-  infoInput,
+  infoInput
 } from '../scripts/utils/constants.js';
 import { initialCards } from '../scripts/utils/cards.js';
 import { Card } from '../scripts/components/Card.js';
