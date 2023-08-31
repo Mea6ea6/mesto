@@ -1,6 +1,6 @@
 # Проектные работы для курсов YandexPracticum
 
-__Ссылка на GHPage →__ _[ссылка](#)_
+__Ссылка на GHPage →__ _[ссылка](https://mea6ea6.github.io/my-repository/)_
 
 ------
 
