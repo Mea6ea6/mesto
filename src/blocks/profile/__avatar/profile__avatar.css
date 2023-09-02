@@ -4,11 +4,5 @@
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
-    align-self: flex-start;
-    pointer-events: none;
-}
-@media screen and (max-width: 599px) {
-    .profile__avatar {
-        align-self: auto;
-    }
+    z-index: 1;
 }

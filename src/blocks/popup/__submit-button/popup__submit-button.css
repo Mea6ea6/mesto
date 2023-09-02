@@ -2,7 +2,7 @@
     font-size: 18px;
     font-weight: 400;
     line-height: 22px;
-    width: 100%;
+    width: 358px;
     color: var(--white);
     background: var(--black);
     border: 1px solid var(--black);
@@ -17,7 +17,9 @@
 }
 @media screen and (max-width: 599px) {
     .popup__submit-button {
+        width: 238px;
         font-size: 14px;
         line-height: 17px;
+        margin-top: 15px;
     }
 }

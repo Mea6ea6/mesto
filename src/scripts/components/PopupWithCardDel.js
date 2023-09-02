@@ -1,34 +1,25 @@
-import { Popup } from './Popup.js';
+import { Popup } from "./Popup.js";
 
-class PopupWithForm extends Popup{
+class PopupWithCardDeleter extends Popup {
 
-    constructor(popupSelector, {submitHandler = null}) {
+    constructor(popupSelector, popupSubmitCallback) {
         super(popupSelector);
-        this._submitHandler = submitHandler;
         this._formElement = this._popupElement.querySelector('.popup__form');
-        this._inputList = this._formElement.querySelectorAll('.popup__input');
         this._submitBtn = this._formElement.querySelector('.popup__submit-button');
-        this._submitBtnText = this._submitBtn.textContent;
-    }
-
-    _getInputValues() {
-        const formValues = {};
-        this._inputList.forEach(input => {
-            formValues[input.name] = input.value;
-        });
-        return formValues;
+        this._submitBtnText = this._submitBtn.textContent
+        this._popupSubmitCallback = popupSubmitCallback;
     }
 
     setEventListeners() {
         super.setEventListeners();
         this._formElement.addEventListener('submit', (evt) => {
             evt.preventDefault();
-            this._submitHandler(this._getInputValues());
+            this._popupSubmitCallback(this._card);
             this.close();
         });
     }
 
-    renderLoading(isLoading, loadingText = 'Сохранение...') {
+    renderLoading(isLoading, loadingText = 'Удаление...') {
         if (isLoading) {
             this._submitBtn.textContent = loadingText;
           } else {
@@ -36,11 +27,15 @@ class PopupWithForm extends Popup{
         }
     }
 
+    setDeleteCard(callback){
+        this._popupSubmitCallback = callback;
+    }
+
     close() {
         super.close();
         this._formElement.reset();
     }
-
+    
 }
 
-export { PopupWithForm }
+export { PopupWithCardDeleter }

@@ -2,3 +2,6 @@
     position: relative;
     margin-bottom: 30px;
 }
+.popup__field:first-child {
+    margin-top: 34px;
+}
