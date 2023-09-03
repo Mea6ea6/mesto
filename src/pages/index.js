@@ -41,7 +41,12 @@ const userInfo = new UserInfo({
   avatarSelector: '.profile__avatar'
 });
 
-const cardSection = new Section(renderCard, '.elements');
+const cardSection = new Section({
+  renderer: (data) => {
+    const card = createCard(data);
+    cardSection.appendItem(card);
+  }
+}, '.elements');
 
 const popupWithImage = new PopupWithImage('#popup-card');
 
@@ -51,15 +56,15 @@ const popupFormAdd = new PopupWithForm('#popup-add', {
   submitHandler: (data) => {
     popupFormAdd.renderLoading(true);
     api.addNewCard(data)
-    .then((res) => {
-      const newCard = renderCard(res)
-      cardSection.prependCard(newCard)
-      popupFormAdd.close()
-    })
-    .catch(err => console.log(err))
-    .finally(() => {
-      popupFormAdd.renderLoading(false)
-    })
+      .then((res) => {
+        const card = createCard(res)
+        cardSection.prependItem(card)
+        popupFormAdd.close()
+      })
+      .catch(err => console.log(err))
+      .finally(() => {
+        popupFormAdd.renderLoading(false)
+      })
   }
 });
 
@@ -67,19 +72,19 @@ const popupFormEdit = new PopupWithForm('#popup-redact', {
   submitHandler: (data) => {
     popupFormEdit.renderLoading(true);
     api.editProfile(data)
-    .then((res) => {
-      userInfo.setUserData({
-        profile: res.name,
-        info: res.about,
-        avatar: res.avatar ? res.avatar : avatarOutput.src,
-        _id: res._id
+      .then((res) => {
+        userInfo.setUserData({
+          profile: res.name,
+          info: res.about,
+          avatar: res.avatar ? res.avatar : avatarOutput.src,
+          _id: res._id
+        })
+        popupFormEdit.close()
       })
-      popupFormEdit.close()
-    })
-    .catch(err => console.log(err))
-    .finally(() => {
-      popupFormEdit.renderLoading(false)
-    });
+      .catch(err => console.log(err))
+      .finally(() => {
+        popupFormEdit.renderLoading(false)
+      });
   }
 });
 
@@ -124,10 +129,9 @@ api.getAllInfo()
 
 // functions ↓
 
-function renderCard(data) {
-  const card = new Card(data, userId, '#card-template', handleCardClick, handleCardLike, handleCardDelete);
-  const newCard = card.createCard();
-  cardSection.appendCard(newCard);
+function createCard(data) {
+  const newCard = new Card(data, userId, '#card-template', handleCardClick, handleCardLike, handleCardDelete);
+  return newCard.createCard();
 }
 
 function handleCardClick(imgLink, caption){
@@ -149,7 +153,7 @@ function handleCardDelete(card){
     api.deleteCard(card.getId())
       .then(() => {
         card.removeCard()
-        popupFormAvatar.close()
+        popupWithConfirmation.close()
       })
       .catch(err => console.log(err))
       .finally(() => {

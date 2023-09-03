@@ -18,7 +18,6 @@ class UserInfo {
         this._nameElement.textContent = data.profile;
         this._infoElement.textContent = data.info;
         this._avatarElement.src = data.avatar;
-        this._idElement = data.info;
     }
     
 }
