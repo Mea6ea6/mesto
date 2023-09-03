@@ -1,16 +1,16 @@
 class UserInfo {
 
-    constructor({profileSelector, infoSelector, avatarSelector, idSelector}) {
+    constructor({profileSelector, infoSelector, avatarSelector}) {
         this._nameElement = document.querySelector(profileSelector); 
         this._infoElement = document.querySelector(infoSelector);
         this._avatarElement = document.querySelector(avatarSelector);
-        this._idElement = idSelector;
     }
 
     getUserData() {
         return {
             profile: this._nameElement.textContent,
-            info: this._infoElement.textContent
+            info: this._infoElement.textContent,
+            avatar: this._avatarElement.src
         }
     }
 

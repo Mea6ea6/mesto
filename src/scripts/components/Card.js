@@ -9,7 +9,6 @@ class Card {
 
   constructor(data, userId, templateSelector, handleCardClick, handleCardLike, handleCardDelete) {
     this._data = data;
-    this._cardId = data._id;
     this._ownerId = data.owner._id;
     this._userId = userId;
 
@@ -51,39 +50,35 @@ class Card {
     return this._card;
   }
 
-  checkLikeStatus() {
-      return this._data.likes.some((item) => {
-          return item._id === this._userId;
-      })
-  }
-
   setLikesData(data) {
       this._data.likes = data.likes;
       this._updateLikeCounter();
   }
 
+  isLiked() {
+      return this._data.likes.some((item) => {
+          return item._id === this._userId;
+      })
+  }
+
   _updateLikeCounter() {
       this._cardLikeCounter.textContent = this._data.likes.length;
-      if (this.checkLikeStatus()) {
+      if (this.isLiked()) {
           this._cardLikeButton.classList.add('element__like_active');
       } else {
           this._cardLikeButton.classList.remove('element__like_active');
       }
   }
 
-  remove() {
-    this._card.remove();
-    this._card = null;
-  }
-
   getId() {
     return this._data._id;
   }
 
-  getData() {
-    const { name, link, _id, iframeLink } = this._data;
-    return { name, link, _id, iframeLink };
+  removeCard() {
+    this._card.remove();
+    this._card = null;
   }
+
 }
 
 export { Card };

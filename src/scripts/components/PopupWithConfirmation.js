@@ -1,6 +1,6 @@
 import { Popup } from "./Popup.js";
 
-class PopupWithCardDeleter extends Popup {
+class PopupWithConfirmation extends Popup {
 
     constructor(popupSelector, popupSubmitCallback) {
         super(popupSelector);
@@ -14,8 +14,7 @@ class PopupWithCardDeleter extends Popup {
         super.setEventListeners();
         this._formElement.addEventListener('submit', (evt) => {
             evt.preventDefault();
-            this._popupSubmitCallback(this._card);
-            this.close();
+            this._popupSubmitCallback();
         });
     }
 
@@ -27,7 +26,7 @@ class PopupWithCardDeleter extends Popup {
         }
     }
 
-    setDeleteCard(callback){
+    setSubmitCallback(callback){
         this._popupSubmitCallback = callback;
     }
 
@@ -38,4 +37,4 @@ class PopupWithCardDeleter extends Popup {
     
 }
 
-export { PopupWithCardDeleter }
+export { PopupWithConfirmation }

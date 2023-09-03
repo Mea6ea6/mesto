@@ -4,7 +4,7 @@ class Api {
         this._headers = config.headers;
     }
 
-    #onResponce(res) {
+    #onResponse(res) {
         return res.ok ? res.json() : res.json().then(errData => Promise.reject(errData))
     }
 
@@ -16,14 +16,14 @@ class Api {
         return fetch(`${this._url}/cards`, {
             headers: this._headers
         })
-            .then(this.#onResponce)
+            .then(this.#onResponse)
     }
 
     getCardById(idCard) {
         return fetch(`${this._url}/cards/${idCard}`, {
             headers: this._headers
         })
-            .then(this.#onResponce)
+            .then(this.#onResponse)
     }
 
     changeCardLike(cardId, isLiked) {
@@ -31,7 +31,7 @@ class Api {
             method: isLiked ? 'DELETE' : 'PUT',
             headers: this._headers,
         })
-            .then(this.#onResponce)
+            .then(this.#onResponse)
     }
 
     deleteCard(idCard) {
@@ -39,26 +39,23 @@ class Api {
             method: 'DELETE',
             headers: this._headers
         })
-            .then(this.#onResponce)
+            .then(this.#onResponse)
     }
 
     addNewCard(data) {
         return fetch(`${this._url}/cards`, {
             method: 'POST',
             headers: this._headers,
-            body: JSON.stringify({
-                name: data.name,
-                link: data.link
-            })
+            body: JSON.stringify(data)
         })
-            .then(this.#onResponce)
+            .then(this.#onResponse)
     }
 
     getUserData(){
         return fetch(`${this._url}/users/me`, {
             headers: this._headers
         })
-            .then(this.#onResponce)
+            .then(this.#onResponse)
     }
 
     editProfile(data){
@@ -70,7 +67,7 @@ class Api {
                 about: data.info,
             })
         })
-            .then(this.#onResponce)
+            .then(this.#onResponse)
     }
 
     editProfileAvatar(link){
@@ -81,7 +78,7 @@ class Api {
                 avatar: link.avatar,
             })
         })
-            .then(this.#onResponce)
+            .then(this.#onResponse)
     }
 };
 
