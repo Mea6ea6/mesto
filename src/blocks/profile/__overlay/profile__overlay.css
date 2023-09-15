@@ -1,7 +1,11 @@
 .profile__overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     align-self: flex-start;
     cursor: pointer;
     position: relative;
+    overflow: hidden;
 }
 .profile__overlay::after {
     content: "";
