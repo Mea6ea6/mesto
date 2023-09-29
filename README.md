@@ -1,7 +1,6 @@
-## Проектная работа 
-__GHPage →__ _[ссылка](https://mea6ea6.github.io/mesto-class/)_
+## Проектная работа  
 
-------
+__GHPage →__ _[ссылка](https://mea6ea6.github.io/mesto-class/)_
 
 __Название:__ «Место»  
 
@@ -18,5 +17,3 @@ __Функционал сайта:__
 - проект размещен на GitHub Pages.
 
 __Инструменты и стек:__ #HTML #CSS #JS #Webpack #GitHubPages #API  
-
-------
