@@ -1,14 +1,9 @@
-## Проектная работа
-
-------
-
-__Ссылка на GHPage →__ _[ссылка](https://mea6ea6.github.io/my-repository/)_
+## Проектная работа 
+__GHPage →__ _[ссылка](https://mea6ea6.github.io/mesto-class/)_
 
 ------
 
 __Название:__ «Место»  
-
-__Объект проектной работы:__ сайт landing-page
 
 __Функционал сайта:__  
 
@@ -22,6 +17,6 @@ __Функционал сайта:__
 - интеграция с бэкендом;
 - проект размещен на GitHub Pages.
 
-__Инструменты и стек:__ #HTML #CSS #JS #Webpack #GitHubPages #API
+__Инструменты и стек:__ #HTML #CSS #JS #Webpack #GitHubPages #API  
 
 ------
