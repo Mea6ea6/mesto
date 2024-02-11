@@ -1,4 +1,4 @@
-# [Проектная работа](https://mea6ea6.github.io/mesto-class/)  
+# Проектная работа 
 
 __Название:__ «Mesto»  
 
